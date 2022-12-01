@@ -1,0 +1,113 @@
+import java.util.*;
+class Airline
+{
+    private String destination;
+    private Long information;
+
+    Scanner sc = new Scanner(System.in);
+    void searchDestination()
+    {
+        System.out.print("Enter your Destination : ");
+        destination = sc.nextLine();
+        System.out.print("Enter your Place : ");
+        destination = sc.nextLine();
+        
+    }
+    void showDetails()
+    {
+        System.out.print("Enter your Name : " );
+        destination = sc.nextLine();
+        System.out.print("Phone Number : ");
+        information = sc.nextLong();
+        // System.out.println("Enter the Gender :");
+        // destination = sc.nextLine();
+        
+    }
+    void passportdetails()
+    {
+        
+        
+        System.out.print("Passport ID : ");
+        information = sc.nextLong();
+        
+        
+     }
+     void flightDetails()
+     {
+         System.out.println("Choose your option : " + " 1.classA  or  2.classB");
+         int a;
+         a = sc.nextInt();
+         if(a==1)
+           {
+             System.out.println("ClassA");
+             System.out.println("Ticket Price : " + "7000");
+         }
+          else if(a==2)
+        {
+            System.out.println("ClassB");
+            System.out.println("Ticket Price : " + "9000");
+        }
+       
+     }
+    //  void seatDetails()
+    //  {
+    //      int n,n1;
+    //   n=sc.nextInt();
+    //   // to check seat is available or not
+    //   for(int i=1;i<=n;i++)
+    //   {
+    //       System.out.println("Enter Seat number:");
+    //       n1=sc.nextInt();
+    //       if(n1==n)
+    //       {
+    //           System.out.println("Seat available");
+    //       }
+    //       else
+    //       {
+    //           System.out.println("Seat is not available");
+    //       }
+    //   }
+    //  }
+    
+}public class hello
+{
+    public static void main(String[] args)
+    {
+       Scanner sc = new Scanner(System.in);
+       System.out.println("                   ✈Airline Ticket Management System✈ ");
+       System.out.println("                     *** ** **** **  ");
+       System.out.println("Enter the number of passengers do you want :");
+      int t = sc.nextInt(); 
+       Airline fc = new Airline();
+        fc.searchDestination();
+        fc.showDetails();
+        fc.passportdetails();
+        fc.flightDetails();
+        // fc.seatDetails();
+        int n=100;
+        System.out.println("Available Seats " + n);
+        //int n1=sc.nextInt();
+    //   for(int i=1;i<=n;i++)
+    //   {
+          System.out.println("Enter Seat number:");
+          int n1=sc.nextInt();
+           if(n1<=n)
+           {
+               System.out.println("Seat available");
+           }
+           else
+           {
+               System.out.println("Seat is not available");
+           }
+           System.out.println("Total Amount :14000");
+           System.out.println("            Sucessfully booked");
+           
+           System.out.println("                 🛩️🛩️🛩️THANKS FOR BOOKING 🛩️🛩️🛩️");
+       
+        
+        
+        
+        
+        
+    }
+}
