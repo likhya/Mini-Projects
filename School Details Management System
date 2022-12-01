@@ -1,0 +1,204 @@
+School Details Management System
+
+import java.util.*;
+
+class schooldetails{
+    
+    Scanner sc=new Scanner(System.in);
+    String teachers[] = new String[200];
+    String teacherQualition[] = new String[200];
+    // String teachersid[] = new String[200];
+    String studentName[] = new String[1000];
+    int classNo[]=new int[1000];
+    int rollNo[]=new int[1000];
+ 
+    
+   /* void addTeachers(){
+        System.out.print("Enter the number of teachers you have to add :\t");
+        int n=sc.nextInt();
+        
+        for(int i=0;i<n;i++){
+            sc.nextLine();
+            System.out.print("Enter the teacher name :\t");
+            teachers[i]=sc.nextLine();
+            System.out.print("The subject which the teacher can teach :\t");
+            teacherQualition[i]=sc.nextLine();
+            System.out.println("****************************");
+        }
+    }
+    */
+    void studentAdmission(){
+       // System.out.println("****************************");
+        System.out.print("Enter the numbers of students to add :");
+        int n=sc.nextInt();
+        for(int i=0;i<n;i++){
+            sc.nextLine();
+            System.out.print("Enter the student name :");
+            studentName[i]=sc.nextLine();
+            System.out.print("Enter the class to join between 1st and 10th standard only :");
+            int a=sc.nextInt();
+            if(a>=1 && a<=10){
+                classNo[i]=a;
+                System.out.println("Student admitted successfully");
+            }else{
+                System.out.println("Not eligible to study in this school");
+                continue;
+            }
+            rollNo[i]=(i+100);
+            System.out.println("Roll number is : "+rollNo[i]);
+            System.out.println("****************************");
+        }
+    }
+    void feeDetails(){
+        System.out.println();
+        System.out.println("\t\t ঔৣ ۝ FEE DETAILS OF THE STUDENT۝ ঔৣ" );
+        System.out.print("Enter the Roll No :");
+        int roll=sc.nextInt();
+        for(int i=0;i<=100;i++){
+            if(rollNo[i]==roll){
+                switch (classNo[i]){
+                    case 1:
+                        System.out.println("Fee for 1st class student is : 10000");
+                        break;
+                    case 2:
+                        System.out.println("Fee for 2nd class student is : 13000");
+                        break;
+                    case 3:
+                        System.out.println("Fee for 3rd class student is : 15000");
+                        break;
+                    case 4:
+                        System.out.println("Fee for 4th class student is : 17000");
+                        break;
+                    case 5:
+                        System.out.println("Fee for 5th class student is : 18000");
+                        break;
+                    case 6:
+                        System.out.println("Fee for 6th class student is : 19000");
+                        break;
+                    case 7:
+                        System.out.println("Fee for 7th class student is : 20000");
+                        break;
+                    case 8:
+                        System.out.println("Fee for 8th class student is : 21000");
+                        break;
+                    case 9:
+                        System.out.println("Fee for 9th class student is : 23000");
+                        break;
+                    case 10:
+                        System.out.println("Fee for 10th class student is : 25000");
+                        break;
+                }
+            }
+               
+        }
+         System.out.println("****************************");
+        
+    }
+    
+    void studentDetails(){
+        System.out.println();
+        System.out.println("\t\t   🖤✪STUDENT DETAILS✪🖤");
+        System.out.println();
+        System.out.print("Enter the Roll No :");
+        int roll=sc.nextInt();
+        int count=0;
+        for(int i=0;i<=100;i++){
+            count=0;
+            if(rollNo[i]==roll){
+                System.out.println("Student name : "+studentName[i]);
+                System.out.println("Class        : "+classNo[i]);
+                System.out.println("Roll No      : "+rollNo[i]);
+                 System.out.println("****************************");
+                break;
+            }else{
+                count=1;
+            }
+        }
+        if(count==1){
+            System.out.println("Students details not available...");
+             System.out.println("****************************");
+        }
+    }
+    
+    
+    
+}
+class Grade extends schooldetails
+{
+
+public static void Result()
+{
+  System.out.println("****👩‍🎓****************👩‍🎓***");String name, fname,rollno;
+  System.out.println("\t");
+ System.out.println("\t\t............🏆♡•STUDENT RESULT DETAILS•♡🏆............");
+int i, Gtotal=0,count=0;
+ String subject[] = { "Mathematics", "Java", "Python","Computer Programming","MySQl","PHP"}; String subcode[]= { "MA-102","JA-103","PY-101","CS-103","MS-101","PH-101"};
+ int midmarks[]= new int[6];
+ int semmarks[]= new int[6];
+  Scanner s = new Scanner(System.in);
+  System.out.println("Enter your Full Name: ");
+  name = s.nextLine();
+  System.out.println("Enter your Father Name:");
+  fname = s.nextLine();
+  System.out.println("Enter your Roll Number:");
+  rollno = s.nextLine();
+      System.out.println("\t\t..○°MID TERM MARKS DETAILS°○..");
+for(i=0;i<6;i++)
+{
+    System.out.println("Enter Midterm Marks for: " +"\n" +subject[i]+":");
+    midmarks[i] = s.nextInt();
+}
+ System.out.println("\n\t\t\t✌️OK NOW😍");
+ System.out.println("\t\t..—(••÷[ SEM MARKS DETAILS ]÷••)—..");
+for(i=0;i<6;i++)
+{
+    System.out.println("Enter Sem Exam Marks for: "+"\n"+subject[i]+":");
+    semmarks[i] = s.nextInt();
+}
+
+  System.out.println("\t\t\t\t ☆•YOUR RESULT•☆");
+  System.out.println("\tCollege:"+"Mother Theresa Institutions of Technology,Palamaner");
+  System.out.print("\n\t\t Name:" +name);
+  System.out.println("\t\tFather Name:" +fname);
+  System.out.println("\t\t Roll Number:" +rollno);
+System.out.println("\n\t\t "+"Subcode"+"\tmarks1"+"\tmarks2"+"\tTotal");
+for(i=0;i<6;i++)
+{
+       if(((midmarks[i])+(semmarks[i])) >=40)
+       {
+        System.out.println("\t\t "+subcode[i]+"\t\t "+midmarks[i]+"\t"+semmarks[i]+"\t"+((midmarks[i])+(semmarks[i])));
+       }
+       else
+      {
+      System.out.println("\t\t "+subcode[i]+"\t\t "+midmarks[i]+"\t"+semmarks[i]+"\t"+((midmarks[i])+(semmarks[i]))+"*");
+      count++;
+      }
+      Gtotal = (Gtotal + ((midmarks[i])+(semmarks[i])));
+}
+if(count >0)
+{
+ System.out.println("\n\t\t Grand Total:\t"+Gtotal+"\tResult: \tFAIL");
+}
+else
+{
+System.out.println("\n\t\t Grand Total:\t"+Gtotal+"\tResult:\tPASS");
+}
+}
+}
+
+
+public class Project3 extends Grade
+{
+	public static void main(String[] args) {
+	    Grade sd=new Grade();
+	    System.out.println("\t   .....꧁༒♛STUDENT RESULT MANAGEMENT SYSTEM♛༒꧂..... ");
+	    System.out.println();
+	    
+	    sd.studentAdmission();
+	    sd.studentDetails();
+	    sd.feeDetails();
+	    sd.Result();
+	 //   sd.addTeachers();
+	   
+	}
+}//Let us rock and roll
